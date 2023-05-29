@@ -10,15 +10,29 @@ FinFuncion
 
 Algoritmo Principal
 	
-	Dimension datos[100]
-	Escribir "Ingrese la cantidad de datos:"
-	Leer n
+	Escribir "Éste algoritmo sirve para calcular tu promedio, dadas las calificaciones de tus tres parciales."
+	Escribir ""
 	
-	Para i<-1 Hasta n Hacer
-		Escribir "Ingrese el dato ",i,":"
-		Leer datos[i]
+	Dimension datos[3]//Ya que la tarea solo necesita 3 parciales pongo el dato en concreto y no una variable n
+	
+	Para i<-1 Hasta 3 Hacer
+		Si (i = 1 | i = 3) Entonces
+			Escribir "Escribe la calificación del ",i,"er. parcial: "
+			Leer datos[i]
+		SiNo
+			Si i = 2 Entonces
+				Escribir "Escribe la calificación del ",i,"do. parcial: "
+				Leer datos[i]
+			FinSi
+		FinSi
 	FinPara
 	
-	Escribir "El promedio es: ",Promedio(datos,n)
+	resultado <- Promedio(datos, 3)
+	Escribir "Tu promedio es: ", resultado//Promedio(datos,3)
+	Si resultado >= 6 Entonces
+		Escribir "¡Felicidades! Pasaste."
+	SiNo
+		Escribir "Reprobaste."
+	FinSi
 	
 FinAlgoritmo
